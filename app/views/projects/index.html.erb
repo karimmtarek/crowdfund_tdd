@@ -1,0 +1,26 @@
+<h1><%= pluralize(@projects.size, 'Project') %></h1>
+
+<% @projects.each do |project| %>
+  <article>
+    <header>
+      <h2><%= link_to(project.name, project)  %></h2>
+    </header>
+    <p>
+      <%= truncate(project.description, length: 20, separator: ' ') %>
+    </p>
+    <table>
+      <tr>
+        <th>Pledge amount:</th>
+        <td><%= number_to_currency(project.target_pledge_amount) %></td>
+      </tr>
+      <tr>
+        <th>Pledgeing ends on:</th>
+        <td><%= format_end_date(project) %></td>
+      </tr>
+      <tr>
+        <th>Website:</th>
+        <td><%= project.website %></td>
+      </tr>
+    </table>
+  </article>
+<% end %>
