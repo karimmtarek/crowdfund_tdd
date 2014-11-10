@@ -13,8 +13,23 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    project_params = params.require(:project).permit(:name, :description, :target_pledge_amount, :pledging_ends_on, :website)
     @project.update(project_params)
     redirect_to @project
+  end
+
+  def new
+    @project = Project.new
+  end
+
+  def create
+    @project = Project.new(project_params)
+    @project.save
+
+    redirect_to @project
+  end
+
+private
+  def project_params
+    params.require(:project).permit(:name, :description, :target_pledge_amount, :pledging_ends_on, :website)
   end
 end

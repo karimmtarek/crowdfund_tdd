@@ -1,0 +1,26 @@
+<h1>Creating New Project</h1>
+<%= form_for(@project) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, cols: 40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.label :target_pledge_amount %>
+    <%= f.number_field :target_pledge_amount %>
+  </p>
+  <p>
+    <%= f.label :pledging_ends_on %>
+    <%= f.datetime_select :pledging_ends_on %>
+  </p>
+  <p>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
