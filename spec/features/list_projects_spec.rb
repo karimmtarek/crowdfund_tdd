@@ -4,6 +4,7 @@ describe "Viewing the list of projects" do
   it "shows three project names" do
     project1 = Project.create(name: "Start-Up Project-A",
                description: "A description of a start-up project-A",
+               image_file_name: 'project-a.png',
                target_pledge_amount: 100.00,
                pledging_ends_on: 30.day.from_now,
                website: "http://project-a.com")
@@ -28,6 +29,7 @@ describe "Viewing the list of projects" do
     expect(page).to have_text(project3.name)
 
     expect(page).to have_text(project1.description[1..10])
+    expect(page).to have_selector("img[src$='#{project1.image_file_name}']")
     expect(page).to have_text(project1.pledging_ends_on)
     expect(page).to have_text(project1.website)
     expect(page).to have_text("$100.00")

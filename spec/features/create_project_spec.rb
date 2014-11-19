@@ -15,6 +15,8 @@ describe "Creating a new project" do
     # select (Time.now.year + 1).to_s, :from => "project_pledging_ends_on_1i"
     # fill_in "Pledging ends on", with: '2015-01-01'
     fill_in "Website", with: 'www.xoxo.com'
+    fill_in "Team members", with: 'Lots of good people.'
+    fill_in "Image file name", with: 'project.gif'
 
     click_button 'Create Project'
 

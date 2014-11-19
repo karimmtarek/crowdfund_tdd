@@ -1,9 +1,13 @@
 <article>
   <header>
     <h2><%= @project.name %></h2>
+    <%= image_for(@project) %>
   </header>
   <p>
     <%= @project.description %>
+  </p>
+  <p>
+    <strong>Team mambers:</strong> <%= @project.team_members %>
   </p>
   <table>
     <tr>

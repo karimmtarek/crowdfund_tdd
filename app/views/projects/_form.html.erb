@@ -8,6 +8,14 @@
     <%= f.text_area :description, cols: 40, rows: 7 %>
   </p>
   <p>
+    <%= f.label :team_members %>
+    <%= f.text_area :team_members, cols: 40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.label :image_file_name %>
+    <%= f.text_field :image_file_name %>
+  </p>
+  <p>
     <%= f.label :target_pledge_amount %>
     <%= f.number_field :target_pledge_amount %>
   </p>
