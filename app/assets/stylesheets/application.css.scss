@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "normalize";
+@import "layout";
+@import "elements";
+@import "projects";
+@import "buttons";
+@import "forms";
