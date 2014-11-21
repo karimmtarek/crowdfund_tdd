@@ -14,9 +14,9 @@ describe "Creating a new project" do
     fill_in "Target pledge amount", with: '5000'
     # select (Time.now.year + 1).to_s, :from => "project_pledging_ends_on_1i"
     # fill_in "Pledging ends on", with: '2015-01-01'
-    fill_in "Website", with: 'www.xoxo.com'
+    fill_in "Website", with: 'http://www.xoxo.com'
     fill_in "Team members", with: 'Lots of good people.'
-    fill_in "Image file name", with: 'project.gif'
+    fill_in "Image Filename", with: 'project.gif'
 
     click_button 'Create Project'
 
@@ -24,6 +24,16 @@ describe "Creating a new project" do
 
     expect(page).to have_text('New Project Name')
 
+  end
+
+  it "does not save the project if it's invalid" do
+     visit new_project_url
+
+    expect {
+      click_button 'Create Project'
+    }.not_to change(Project, :count)
+
+    expect(page).to have_text('error')
   end
 
 end
