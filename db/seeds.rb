@@ -35,3 +35,34 @@ Project.create([
    image_file_name: "project-c.png"
  },
 ])
+
+project1 = Project.first
+
+pledge1 = project1.pledges.create!(
+   name: 'karim',
+   email: 'karim@karim.com',
+   comment: 'no comment',
+   amount: 50
+)
+pledge2 = project1.pledges.create!(
+   name: 'tarek',
+   email: 'tarek@karim.com',
+   comment: 'no comment',
+   amount: 100
+)
+pledge3 = project1.pledges.create!(
+   name: 'zozo',
+   email: 'zozo@karim.com',
+   comment: 'no comment',
+   amount: 200
+)
+
+project2 = Project.last
+
+pledge4 = project2.pledges.create!(
+   name: 'karim',
+   email: 'karim@karim.com',
+   comment: 'no comment',
+   amount: 50
+)
+

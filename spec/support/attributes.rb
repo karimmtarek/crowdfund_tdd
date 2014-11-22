@@ -9,3 +9,12 @@ def project_attributes(override = {})
     website: "http://project-a.com"
   }.merge(override)
 end
+
+def pledge_attributes(override = {})
+  {
+    name: 'pledge name',
+    email: 'karim@gmail.com',
+    comment: 'no comment',
+    amount: 50
+  }.merge(override)
+end

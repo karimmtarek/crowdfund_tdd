@@ -1,0 +1,12 @@
+<ol id="pledges">
+  <% @pledges.each do |pledge| %>
+    <li>
+      <span class="pledge"><%= number_to_currency(pledge.amount) %></span>
+      <span class="user">by <%= mail_to(pledge.email, pledge.name) %></span>
+      <span class="date"><%= time_ago_in_words(pledge.created_at) %> ago</span>
+      <p>
+        &quot;<%= pledge.comment %>&quot;
+      </p>
+    </li>
+  <% end %>
+</ol>

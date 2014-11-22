@@ -19,11 +19,14 @@
   <p>
     <%= @project.team_members %>
   </p>
+  <p>
+    <%= link_to('View Pledges', project_pledges_path(@project)) %>
+  </p>
   <footer>
     <nav>
       <%= link_to "Edit", edit_project_path(@project), class: 'button' %>
-      <%= link_to "Delete", @project, 
-                  class: 'button', 
+      <%= link_to "Delete", @project,
+                  class: 'button',
                   method: :delete, data: { confirm: 'Are you sure?' } %>
     </nav>
   </footer>
