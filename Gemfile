@@ -40,8 +40,12 @@ gem 'spring',        group: :development
 group :test, :development do
   gem 'rspec-rails'
   gem 'better_errors'
-  gem 'did_you_mean'
-  gem 'jazz_hands'
+  # gem 'did_you_mean'
+  # gem 'jazz_hands'
+end
+
+group :development do
+  gem 'guard-livereload', require: false
 end
 
 group :test do

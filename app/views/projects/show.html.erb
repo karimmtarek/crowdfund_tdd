@@ -23,6 +23,7 @@
     <%= link_to('View Pledges', project_pledges_path(@project)) %>
   </p>
   <footer>
+    <%= link_to "Pledge!", new_project_pledge_path(@project), class: "button ok register" %>
     <nav>
       <%= link_to "Edit", edit_project_path(@project), class: 'button' %>
       <%= link_to "Delete", @project,
