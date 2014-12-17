@@ -14,4 +14,12 @@ module ProjectsHelper
       image_tag project.image_file_name
     end
   end
+
+  def format_pledge_outstanding(project)
+    if project.funded?
+      content_tag(:strong, "Funded!")
+    else
+      "Only #{number_to_currency(project.amount_outstanding)} left!"
+    end
+  end
 end

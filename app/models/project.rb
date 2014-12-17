@@ -20,4 +20,20 @@ class Project < ActiveRecord::Base
   def self.active_pledging
     where('pledging_ends_on > ?', Time.now).order('pledging_ends_on')
   end
+
+  def total_amount_pledged
+    pledges.sum("amount")
+  end
+
+  def amount_outstanding
+    target_pledge_amount - total_amount_pledged
+  end
+
+  def funded?
+    if amount_outstanding <= 0
+      true
+    else
+      false
+    end
+  end
 end

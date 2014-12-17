@@ -9,7 +9,7 @@
   </p>
   <h3>Target Pledge Amount</h3>
   <p>
-    <%= number_to_currency(@project.target_pledge_amount) %>
+    <%= number_to_currency(@project.target_pledge_amount) %> (<%= format_pledge_outstanding(@project) %>)
   </p>
   <h3>Website</h3>
   <p>
